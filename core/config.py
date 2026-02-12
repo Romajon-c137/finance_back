@@ -4,9 +4,8 @@ from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# django configurations
-if not load_dotenv():
-    raise Exception(".env Not Found")
+# Load .env if exists (local dev), otherwise use env vars from docker-compose
+load_dotenv()  # Returns True if .env found, False otherwise - both are OK
 
 SECRET_KEY = os.getenv("SECRET_KEY")
 DEBUG = True
