@@ -24,6 +24,8 @@ services:
   web:
     build: .
     container_name: finance_web
+    env_file:
+      - .env
     environment:
       - DEBUG=${DEBUG:-False}
       - SECRET_KEY=${SECRET_KEY}
