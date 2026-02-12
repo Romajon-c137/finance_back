@@ -12,18 +12,20 @@ else:
     # В production используем белый список
     CORS_ALLOW_ALL_ORIGINS = False
     CORS_ALLOWED_ORIGINS = [
-        # backend
+        # backend production
+        "https://back.finance.akfaglass.kg",
+        "http://back.finance.akfaglass.kg",
+        # frontend production
+        "https://finance.akfaglass.kg",
+        "http://finance.akfaglass.kg",
+        # local backend
         "http://localhost:8000",
         "http://127.0.0.1:8000",
-        "http://finance.smarthouse.website:8000",
-        "https://finance.smarthouse.website:8000",
-        # frontend
-        "https://finance.smarthouse.website",
-        "http://finance.smarthouse.website",
-        "http://103.88.243.13:4343",
-        "https://103.88.243.13:4343",
+        # local frontend
         "http://localhost:3000",
         "http://127.0.0.1:3000",
+        "http://103.88.243.13:4343",
+        "https://103.88.243.13:4343",
         # other
         "http://localhost",
         "http://127.0.0.1",
