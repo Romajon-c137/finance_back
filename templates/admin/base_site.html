@@ -1,0 +1,63 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+
+{% block extrastyle %}
+{{ block.super }}
+<style>
+    /* 🎨 ЯРКИЕ ИЗМЕНЕНИЯ - чтобы видеть что production обновлен */
+    
+    #header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+        border-bottom: 4px solid #ffd700;
+    }
+    
+    #branding h1, #branding h1 a:link, #branding h1 a:visited {
+        color: #ffffff !important;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        font-weight: bold;
+        font-size: 24px !important;
+    }
+    
+    .module h2, .module caption, .inline-group h2 {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+        color: white !important;
+        border-left: 4px solid #ffd700 !important;
+    }
+    
+    #content-main {
+        border-top: 3px solid #667eea;
+    }
+    
+    /* Кнопка "Welcome" */
+    #user-tools a {
+        color: #ffd700 !important;
+        font-weight: bold;
+    }
+    
+    /* Добавляем заметный маркер версии */
+    #branding h1:after {
+        content: " ✨";
+        animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.5; }
+    }
+    
+    /* Яркий footer */
+    .footer {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 10px;
+        text-align: center;
+        font-weight: bold;
+    }
+</style>
+{% endblock %}
+
+{% block footer %}
+<div class="footer">
+    💰 Finance Backend v2.0 | Updated: {{ request.META.SERVER_NAME }} | 🚀 Production Ready
+</div>
+{% endblock %}

@@ -21,6 +21,11 @@ from django.shortcuts import redirect
 from django.urls import path,include
 from api.docs import schema_view_v1
 
+# 🎨 КАСТОМИЗАЦИЯ АДМИНКИ - чтобы видеть что production обновлен
+admin.site.site_header = "💰 Finance Admin Panel v2.0"
+admin.site.site_title = "Finance Admin"
+admin.site.index_title = "🚀 Добро пожаловать в панель управления"
+
 urlpatterns = [
     path("api/v1/",include('api.v1.urls')),
     

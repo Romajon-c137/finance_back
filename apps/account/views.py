@@ -3,12 +3,18 @@ from django.views.decorators.csrf import csrf_exempt
 from rest_framework.response import Response
 from rest_framework.authtoken.models import Token
 from rest_framework import status
+from rest_framework.permissions import AllowAny
 
 from apps.account.serializers import AuthTokenSerializer
 
 
 class Login(GenericAPIView):
+    """
+    API endpoint для авторизации пользователей.
+    Возвращает токен для дальнейших запросов.
+    """
     serializer_class = AuthTokenSerializer
+    permission_classes = [AllowAny]  # Разрешаем доступ без авторизации
 
     @csrf_exempt
     def post(self, request, *args, **kwargs):
