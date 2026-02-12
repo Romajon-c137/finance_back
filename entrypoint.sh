@@ -17,7 +17,7 @@ echo "Creating superuser if not exists..."
 python manage.py shell << END
 from apps.account.models import User
 if not User.objects.filter(username='admin').exists():
-    User.objects.create_superuser('admin', '', 'admin123')
+    User.objects.create_superuser(username='admin', password='admin123')
     print('Superuser created')
 else:
     print('Superuser already exists')
